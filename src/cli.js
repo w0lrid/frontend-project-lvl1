@@ -1,6 +1,6 @@
 import readlineSync from "readline-sync";
 
-export const greetPlayer = () => {
+export const greet = () => {
     console.log("Welcome to the Brain Games!");
 
     setTimeout(() => {
