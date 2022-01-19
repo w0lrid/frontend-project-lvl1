@@ -1,4 +1,5 @@
 {
+    "type": "module",
     "name": "@hexlet/code",
     "version": "1.0.0",
     "description": "[![Actions Status](https://github.com/w0lrid/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/w0lrid/frontend-project-lvl1/actions)",
@@ -16,8 +17,10 @@
         "url": "https://github.com/w0lrid/frontend-project-lvl1/issues"
     },
     "homepage": "https://github.com/w0lrid/frontend-project-lvl1#readme",
-    "type": "module",
     "bin": {
         "brain-games": "bin/brain-games.js"
+    },
+    "dependencies": {
+        "readline-sync": "^1.4.10"
     }
 }
