@@ -6,5 +6,3 @@ publish:
 	npm publish --dry-run
 lint:
 	npx eslint
-install-all:
-	npm i
