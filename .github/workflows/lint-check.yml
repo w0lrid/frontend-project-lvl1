@@ -1,8 +1,9 @@
 name: lint-check
+
 on: push
+
 jobs:
   lint-job:
     runs-on: ubuntu-latest
     steps:
-      - name: first-step
       - run: make lint
