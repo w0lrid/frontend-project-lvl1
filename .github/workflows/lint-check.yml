@@ -6,8 +6,8 @@ jobs:
   lint-job:
     runs-on: ubuntu-latest
     steps:
-      - name: install dependencies
-        run: make install
+      - name: install all dependencies
+        run: make install-all
 
       - name: run linter
         run: make lint
