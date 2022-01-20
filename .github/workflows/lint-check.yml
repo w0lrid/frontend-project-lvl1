@@ -11,9 +11,7 @@ jobs:
         with:
           node-version: "16"
       - name: install dependencies
-        run: |
-          make install
+        run: make install
 
       - name: run linter
-        run: |
-          make lint
+        run: make lint
