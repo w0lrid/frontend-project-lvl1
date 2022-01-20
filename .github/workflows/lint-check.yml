@@ -6,5 +6,5 @@ jobs:
   lint-job:
     runs-on: ubuntu-latest
     steps:
-      - run: make install
-      - run: make lint
+      - uses: make install
+      - uses: make lint
