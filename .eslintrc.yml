@@ -12,5 +12,4 @@ rules:
     - error
     - ignorePackages
     - js: always
-  quotes: "double"
-  allowTemplateLiterals: true
+  quotes: ["warn", "double"]
