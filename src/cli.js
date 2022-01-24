@@ -1,6 +1,6 @@
 import readlineSync from "readline-sync";
 
-const greet = () => {
+export const greet = () => {
   console.log("Welcome to the Brain Games!");
 
   const name = readlineSync.question("What's your name, hero? ");
@@ -10,4 +10,13 @@ const greet = () => {
   return name;
 };
 
-export default greet;
+export const introduceRules = (string) => {
+  console.log(string);
+};
+
+export const generateRandomNumber = (maxBorder) => Math.floor(Math.random() * maxBorder);
+
+export const finishGame = (result, name) => {
+  const finisher = result === "Correct!" ? `Congratulations, ${name}!` : `Let's try again, ${name}!`;
+  return finisher;
+};
