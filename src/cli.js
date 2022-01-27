@@ -16,6 +16,8 @@ export const introduceRules = (string) => {
 
 export const generateRandomNumber = (maxBorder) => Math.floor(Math.random() * maxBorder);
 
+export const generateRandomArbitary = (min, max) => Math.floor(Math.random() * (max - min) + min);
+
 export const finishGame = (result, name) => {
   const finisher = result === "Correct!" ? `Congratulations, ${name}!` : `Let's try again, ${name}!`;
   return finisher;

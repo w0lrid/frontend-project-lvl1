@@ -1,6 +1,8 @@
 {
   "tabWidth": 2,
-  "printWidth": 150,
-  "preserve": "never",
-  "bracketSameLine": true
+  "printWidth": 120,
+  "trailingComma": "all",
+  "semi": true,
+  "bracketSameLine": true,
+  "proseWrap": "always"
 }
