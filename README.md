@@ -15,3 +15,6 @@
 
 ### brain-progression game
 [![asciicast](https://asciinema.org/a/BWtjiT7kxf4Ms6GpsI2O5kFJT.svg)](https://asciinema.org/a/BWtjiT7kxf4Ms6GpsI2O5kFJT)
+
+### brain-prime game
+[![asciicast](https://asciinema.org/a/0uDsPw3Gp3jU2l4Mq9sessH7f.svg)](https://asciinema.org/a/0uDsPw3Gp3jU2l4Mq9sessH7f)
