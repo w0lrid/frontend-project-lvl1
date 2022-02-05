@@ -1,10 +1,10 @@
-import engine from "../engine.js";
-import { generateRandomNumber } from "../cli.js";
+import engine from '../engine.js';
+import { generateRandomNumber } from '../cli.js';
 
 const rule = `What is the result of the expression?`;
 
 const generateQuestion = () => {
-  const mathOperations = ["+", "-", "*"];
+  const mathOperations = ['+', '-', '*'];
   const max = 3;
 
   const a = generateRandomNumber(10);
@@ -19,7 +19,7 @@ const calcGameLogic = (mathExp, userAnswer) => {
   const correctAnswer = eval(mathExp);
 
   if (Number(userAnswer) === correctAnswer) {
-    return "Correct!";
+    return 'Correct!';
   }
 
   return `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`;

@@ -1,5 +1,5 @@
-import engine from "../engine.js";
-import { generateRandomNumber } from "../cli.js";
+import engine from '../engine.js';
+import { generateRandomNumber } from '../cli.js';
 
 const rule = `Answer "yes" if given number is prime. Otherwise answer "no".`;
 
@@ -9,7 +9,7 @@ const generateQuestion = () => {
 };
 
 const primeGameLogic = (number, answer) => {
-  const [yes, no] = ["yes", "no"];
+  const [yes, no] = ['yes', 'no'];
   let isPrime = true;
 
   if (number <= 1) {

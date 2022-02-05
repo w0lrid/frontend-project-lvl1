@@ -1,5 +1,5 @@
-import engine from "../engine.js";
-import { generateRandomNumber } from "../cli.js";
+import engine from '../engine.js';
+import { generateRandomNumber } from '../cli.js';
 
 const rule = `Answer 'yes' if the number is even, otherwise answer 'no'.`;
 
@@ -9,7 +9,7 @@ const generateQuestion = () => {
 };
 
 const evenGameLogic = (number, answer) => {
-  const [yes, no] = ["yes", "no"];
+  const [yes, no] = ['yes', 'no'];
 
   if (number % 2 === 0) {
     return answer.toLowerCase() === yes ? `Correct!` : `'${answer}' is wrong answer ;(. Correct answer was '${yes}'.`;

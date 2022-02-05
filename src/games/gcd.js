@@ -1,5 +1,5 @@
-import engine from "../engine.js";
-import { generateRandomNumber } from "../cli.js";
+import engine from '../engine.js';
+import { generateRandomNumber } from '../cli.js';
 
 const rule = `Find the greatest common divisor of given numbers.`;
 
@@ -11,7 +11,7 @@ const generateQuestion = () => {
 };
 
 const gcdGameLogic = (question, answer) => {
-  const numbers = question.split(" ").map(Number);
+  const numbers = question.split(' ').map(Number);
   let [a, b] = numbers;
 
   while (a !== 0 && b !== 0) {
@@ -25,7 +25,7 @@ const gcdGameLogic = (question, answer) => {
   const gcd = a + b;
 
   if (Number(answer) === gcd) {
-    return "Correct!";
+    return 'Correct!';
   }
 
   return `'${answer}' is wrong answer ;(. Correct answer was '${gcd}'`;

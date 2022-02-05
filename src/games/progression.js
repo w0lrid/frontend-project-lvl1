@@ -1,5 +1,5 @@
-import engine from "../engine.js";
-import { generateRandomNumber, generateRange } from "../cli.js";
+import engine from '../engine.js';
+import { generateRandomNumber, generateRange } from '../cli.js';
 
 const rule = `What number is missing in the progression?`;
 let hiddenNumber = null;
@@ -20,19 +20,19 @@ const createSequence = () => {
   }
 
   hiddenNumber = sequence[positionHiddenNumber];
-  sequence[positionHiddenNumber] = "..";
+  sequence[positionHiddenNumber] = '..';
 
   return sequence;
 };
 
 const generateQuestion = () => {
   const sequence = createSequence();
-  return sequence.join(" ");
+  return sequence.join(' ');
 };
 
 const progressionGameLogic = (sequence, answer) => {
   return Number(answer) === hiddenNumber
-    ? "Correct!"
+    ? 'Correct!'
     : `'${answer}' is wrong answer ;(. Correct answer was '${hiddenNumber}'`;
 };
 
