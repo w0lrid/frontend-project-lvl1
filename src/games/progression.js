@@ -1,4 +1,3 @@
-import readlineSync from "readline-sync";
 import engine from "../engine.js";
 import { generateRandomNumber, generateRange } from "../cli.js";
 
