@@ -1,7 +1,7 @@
 import engine from '../engine.js';
 import { generateRandomNumber } from '../cli.js';
 
-const rule = `Find the greatest common divisor of given numbers.`;
+const rule = 'Find the greatest common divisor of given numbers.';
 
 const generateQuestion = () => {
   const max = 100;

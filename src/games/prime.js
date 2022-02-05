@@ -1,7 +1,7 @@
 import engine from '../engine.js';
 import { generateRandomNumber } from '../cli.js';
 
-const rule = `Answer "yes" if given number is prime. Otherwise answer "no".`;
+const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const generateQuestion = () => {
   const max = 100;
@@ -24,10 +24,10 @@ const primeGameLogic = (number, answer) => {
   }
 
   if (isPrime) {
-    return String(answer) === yes ? `Correct!` : `'${answer}' is wrong answer ;(. Correct answer was '${yes}'.`;
+    return String(answer) === yes ? 'Correct!' : `'${answer}' is wrong answer ;(. Correct answer was '${yes}'.`;
   }
 
-  return String(answer) === no ? `Correct!` : `'${answer}' is wrong answer ;(. Correct answer was '${no}'.`;
+  return String(answer) === no ? 'Correct!' : `'${answer}' is wrong answer ;(. Correct answer was '${no}'.`;
 };
 
 const primeGame = () => engine(rule, generateQuestion, primeGameLogic);

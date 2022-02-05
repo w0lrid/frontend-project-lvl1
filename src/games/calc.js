@@ -1,7 +1,7 @@
 import engine from '../engine.js';
 import { generateRandomNumber } from '../cli.js';
 
-const rule = `What is the result of the expression?`;
+const rule = 'What is the result of the expression?';
 
 const generateQuestion = () => {
   const mathOperations = ['+', '-', '*'];

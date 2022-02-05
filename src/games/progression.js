@@ -1,7 +1,7 @@
 import engine from '../engine.js';
 import { generateRandomNumber, generateRange } from '../cli.js';
 
-const rule = `What number is missing in the progression?`;
+const rule = 'What number is missing in the progression?';
 let hiddenNumber = null;
 const createSequence = () => {
   const maxStep = 20;
