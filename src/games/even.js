@@ -1,32 +1,20 @@
-import readlineSync from "readline-sync";
 import engine from "../engine.js";
 import { generateRandomNumber } from "../cli.js";
 
 const rule = `Answer 'yes' if the number is even, otherwise answer 'no'.`;
 
-const evenGameLogic = () => {
+const generateQuestion = () => {
   const max = 100;
-  const [yes, no] = ["yes", "no"];
-  const number = generateRandomNumber(max);
-
-  console.log(`Question: ${number}`);
-  const answer = readlineSync.question("Your answer: ");
-
-  if (number % 2 === 0) {
-    if (answer.toLowerCase() === yes) {
-      return `Correct!`;
-    }
-
-    return `'${answer}' is wrong answer ;(. Correct answer was '${yes}'.`;
-  } else {
-    if (answer.toLowerCase() === "no") {
-      return `Correct!`;
-    }
-
-    return `'${answer}' is wrong answer ;(. Correct answer was '${no}'.`;
-  }
+  return generateRandomNumber(max);
 };
 
-const evenGame = () => engine(rule, evenGameLogic);
+const evenGameLogic = (number, answer) => {
+  const [yes, no] = ["yes", "no"];
 
-export default evenGame;
+  if (number % 2 === 0) {
+    return answer.toLowerCase() === yes ? `Correct!` : `'${answer}' is wrong answer ;(. Correct answer was '${yes}'.`;
+  }
+  return answer.toLowerCase() === no ? `Correct!` : `'${answer}' is wrong answer ;(. Correct answer was '${no}'.`;
+};
+
+export default () => engine(rule, generateQuestion, evenGameLogic);

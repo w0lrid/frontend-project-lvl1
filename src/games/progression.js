@@ -1,17 +1,17 @@
 import readlineSync from "readline-sync";
 import engine from "../engine.js";
-import { generateRandomNumber, generateRandomArbitary } from "../cli.js";
+import { generateRandomNumber, generateRange } from "../cli.js";
 
 const rule = `What number is missing in the progression?`;
-
-const progressionGameLogic = () => {
+let hiddenNumber = null;
+const createSequence = () => {
   const maxStep = 20;
   const minCountDigits = 5;
   const maxCountDigits = 10;
 
-  const length = generateRandomArbitary(minCountDigits, maxCountDigits);
+  const length = generateRange(minCountDigits, maxCountDigits);
   const positionHiddenNumber = generateRandomNumber(length);
-  const stepOfSequence = generateRandomArbitary(1, 10);
+  const stepOfSequence = generateRange(1, 10);
   const sequence = [];
   let digit = generateRandomNumber(maxStep);
 
@@ -20,19 +20,21 @@ const progressionGameLogic = () => {
     sequence.push(digit);
   }
 
-  const hiddenNumber = sequence[positionHiddenNumber];
+  hiddenNumber = sequence[positionHiddenNumber];
   sequence[positionHiddenNumber] = "..";
 
-  console.log(`Question: ${sequence.join(" ")}`);
-  const answer = readlineSync.question("Your answer: ");
-
-  if (Number(answer) === hiddenNumber) {
-    return "Correct!";
-  }
-
-  return `'${answer}' is wrong answer ;(. Correct answer was '${hiddenNumber}'`;
+  return sequence;
 };
 
-const progressionGame = () => engine(rule, progressionGameLogic);
+const generateQuestion = () => {
+  const sequence = createSequence();
+  return sequence.join(" ");
+};
 
-export default progressionGame;
+const progressionGameLogic = (sequence, answer) => {
+  return Number(answer) === hiddenNumber
+    ? "Correct!"
+    : `'${answer}' is wrong answer ;(. Correct answer was '${hiddenNumber}'`;
+};
+
+export default () => engine(rule, generateQuestion, progressionGameLogic);

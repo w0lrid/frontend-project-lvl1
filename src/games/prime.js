@@ -1,17 +1,16 @@
-import readlineSync from "readline-sync";
 import engine from "../engine.js";
 import { generateRandomNumber } from "../cli.js";
 
 const rule = `Answer "yes" if given number is prime. Otherwise answer "no".`;
 
-const primeGameLogic = () => {
+const generateQuestion = () => {
   const max = 100;
-  const [yes, no] = ["yes", "no"];
-  const number = generateRandomNumber(max);
-  let isPrime = true;
+  return generateRandomNumber(max);
+};
 
-  console.log(`Question: ${number}`);
-  const answer = readlineSync.question("Your answer: ");
+const primeGameLogic = (number, answer) => {
+  const [yes, no] = ["yes", "no"];
+  let isPrime = true;
 
   if (number <= 1) {
     isPrime = false;
@@ -31,6 +30,6 @@ const primeGameLogic = () => {
   return String(answer) === no ? `Correct!` : `'${answer}' is wrong answer ;(. Correct answer was '${no}'.`;
 };
 
-const primeGame = () => engine(rule, primeGameLogic);
+const primeGame = () => engine(rule, generateQuestion, primeGameLogic);
 
 export default primeGame;
