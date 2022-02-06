@@ -31,9 +31,8 @@ const generateQuestion = () => {
 };
 
 const progressionGameLogic = (sequence, answer) => {
-  return Number(answer) === hiddenNumber
-    ? 'Correct!'
-    : `'${answer}' is wrong answer ;(. Correct answer was '${hiddenNumber}'`;
+  if (Number(answer) === hiddenNumber) return 'Correct!';
+  return `'${answer}' is wrong answer ;(. Correct answer was '${hiddenNumber}'`;
 };
 
 export default () => engine(rule, generateQuestion, progressionGameLogic);
