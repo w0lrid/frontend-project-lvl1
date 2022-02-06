@@ -16,7 +16,11 @@ const generateQuestion = () => {
 };
 
 const calcGameLogic = (mathExp, userAnswer) => {
-  const correctAnswer = eval(mathExp);
+  const [a, operator, b] = mathExp.split(' ');
+  let correctAnswer = null;
+  if (operator === '+') correctAnswer = Number(a) + Number(b);
+  if (operator === '-') correctAnswer = Number(a) - Number(b);
+  if (operator === '*') correctAnswer = Number(a) * Number(b);
 
   if (Number(userAnswer) === correctAnswer) {
     return 'Correct!';
